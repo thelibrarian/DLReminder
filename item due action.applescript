@@ -25,9 +25,8 @@ tell application "Delicious Library 2"
 			end repeat
 			if dueItems is not {} then
 				set toname to (myFriend's first name) & " " & (myFriend's last name)
-				display dialog toname
 				set toemail to myFriend's email
-				set mBody to "Hi " & (myFriend's first name) & "," & return & return & "These items are now due, and should be returned to the Design Library tomorrow:" & return & return
+				set mBody to "Hi " & (myFriend's first name) & "," & return & return & "These items are now due, and should be returned to the Design Library:" & return & return
 				repeat with dueItem in dueItems
 					set mBody to mBody & " * " & (name of (medium of dueItem)) & return
 				end repeat
