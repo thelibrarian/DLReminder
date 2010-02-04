@@ -1,19 +1,3 @@
-set appfolder to "/Users/tony/dev/library automator/"
-set lockfile to appfolder & ".lock-" & date_format()
-
-to date_format()
-	set {year:y, month:m, day:d} to (current date)
-	(y * 10000 + m * 100 + d) as string
-end date_format
-
-tell application "Finder"
-	if exists POSIX file lockfile then
-		return
-	else
-		do shell script "rm \"" & appfolder & "\".lock-*; touch \"" & lockfile & "\""
-	end if
-end tell
-
 tell application "Delicious Library 2"
 	tell front document
 		repeat with myFriend in friends
